@@ -20,9 +20,10 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 from dbus_next import BusType
 from pythoneda.infrastructure.dbus import DbusSignalEmitter
-from pythoneda.shared.artifact_changes.events import ChangeStaged
-from pythoneda.shared.artifact_changes.events.infrastructure.dbus import DbusChangeStaged
+from pythoneda.shared.artifact.events import ChangeStaged
+from pythoneda.shared.artifact.events.infrastructure.dbus import DbusChangeStaged
 from typing import Dict
+
 
 class CodeRequestDbusSignalEmitter(DbusSignalEmitter):
 
@@ -37,8 +38,9 @@ class CodeRequestDbusSignalEmitter(DbusSignalEmitter):
 
     Collaborators:
         - pythoneda.application.PythonEDA: Requests emitting events.
-        - pythoneda.shared.artifact_changes.events.infrastructure.dbus.DbusChangeStaged
+        - pythoneda.shared.artifact.events.infrastructure.dbus.DbusChangeStaged
     """
+
     def __init__(self):
         """
         Creates a new CodeRequestDbusSignalEmitter instance.
@@ -53,6 +55,6 @@ class CodeRequestDbusSignalEmitter(DbusSignalEmitter):
         """
         result = {}
         key = self.__class__.full_class_name(ChangeStaged)
-        result[key] = [ DbusChangeStaged, BusType.SYSTEM ]
+        result[key] = [DbusChangeStaged, BusType.SYSTEM]
 
         return result
