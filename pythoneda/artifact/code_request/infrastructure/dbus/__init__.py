@@ -1,3 +1,4 @@
+# vim: set fileencoding=utf-8
 """
 pythoneda/artifact/code_request/infrastructure/dbus/__init__.py
 
